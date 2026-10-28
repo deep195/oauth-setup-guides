@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { headers } from "next/headers";
+import { ArrowLeft } from "lucide-react";
 import { decodeGuide } from "@/lib/shareLink";
 import GuideView from "@/components/GuideView";
 
@@ -32,8 +33,9 @@ export default function LiveGuidePage(props: { searchParams: Promise<{ d?: strin
   return (
     <div>
       <div className="max-w-3xl mx-auto px-4 pt-6">
-        <Link href="/" className="text-sm text-zinc-500 hover:underline">
-          ← Library
+        <Link href="/" className="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+          <ArrowLeft className="w-3.5 h-3.5" />
+          Library
         </Link>
       </div>
       <Suspense fallback={<div className="max-w-2xl mx-auto px-4 py-16 text-center text-zinc-500">Loading guide...</div>}>
