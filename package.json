@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@mozilla/readability": "^0.6.0",
-    "jsdom": "^29.1.1",
+    "linkedom": "^0.18.14",
     "next": "16.4.3",
     "react": "19.3.0",
     "react-dom": "19.3.0",
@@ -19,7 +19,6 @@
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
-    "@types/jsdom": "^30.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

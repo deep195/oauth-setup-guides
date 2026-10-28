@@ -1,4 +1,4 @@
-import { JSDOM } from "jsdom";
+import { parseHTML } from "linkedom";
 import { Readability } from "@mozilla/readability";
 
 export type FetchedPage = {
@@ -24,8 +24,13 @@ export async function fetchPageText(url: string, maxChars = 6000): Promise<Fetch
     const contentType = res.headers.get("content-type") || "";
     if (!contentType.includes("text/html")) return { url, title: "", text: "", ok: false };
     const html = await res.text();
-    const dom = new JSDOM(html, { url });
-    const reader = new Readability(dom.window.document);
+    // linkedom has no direct "base URL" option like jsdom did; inject a <base> tag so
+    // Readability can resolve relative links (not critical for text-only extraction, but cheap).
+    const htmlWithBase = /<head[^>]*>/i.test(html)
+      ? html.replace(/<head[^>]*>/i, (m) => `${m}<base href="${url}">`)
+      : `<base href="${url}">${html}`;
+    const { document } = parseHTML(htmlWithBase);
+    const reader = new Readability(document as unknown as Document);
     const article = reader.parse();
     const text = (article?.textContent || "").replace(/\s+\n/g, "\n").replace(/[ \t]+/g, " ").trim();
     if (!text || text.length < 100) return { url, title: article?.title || "", text: "", ok: false };
