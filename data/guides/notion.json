@@ -1,0 +1,54 @@
+{
+  "appName": "Notion",
+  "website": "https://notion.so",
+  "slug": "notion",
+  "difficulty": "moderate",
+  "setupTimeMinutes": null,
+  "approvalWaitDays": null,
+  "summary": "Register an OAuth integration in Notion so users can authorize your app to access their Notion workspaces. You will need to provide app details and a redirect URI, and public apps may require Notion's approval before users can install them.",
+  "requirements": [
+    "A Notion account",
+    "An HTTPS redirect URI for handling OAuth callbacks",
+    "An app name and description",
+    "An app logo or icon"
+  ],
+  "steps": [
+    {
+      "text": "Go to Notion's developer/integrations settings and create a new integration.",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Enter your app name, logo, description, and redirect URI.",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Save the generated client ID and client secret.",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Submit the app for review if you want it available to all Notion users as a public integration.",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Implement the OAuth authorization flow in your application using the obtained credentials.",
+      "owner": "agent_can_draft"
+    }
+  ],
+  "blockers": [
+    "Public OAuth apps may require approval from Notion before end users can install them; internal integrations are typically limited to your own workspace.",
+    "Redirect URIs typically must use HTTPS and match exactly.",
+    "Client secrets must be stored securely and never exposed in client-side code."
+  ],
+  "sources": [],
+  "confidence": "low",
+  "uncertainNotes": [
+    "Exact review timeline and approval criteria are not confirmed by sources.",
+    "Whether business verification or a paid plan is required is not confirmed.",
+    "Specific redirect URI format requirements are not confirmed.",
+    "No source material was provided to verify any claims in this guide."
+  ],
+  "manuallyVerified": false,
+  "verificationNotes": [],
+  "generatedAt": "2026-10-28T08:42:30.150Z",
+  "isLive": false
+}

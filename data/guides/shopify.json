@@ -1,0 +1,72 @@
+{
+  "appName": "Shopify",
+  "website": "https://shopify.com",
+  "slug": "shopify",
+  "difficulty": "moderate",
+  "setupTimeMinutes": 30,
+  "approvalWaitDays": 7,
+  "summary": "Register your app in Shopify's Dev Dashboard and choose a distribution model. Custom distribution (single store or Plus org) needs no review; public distribution (many stores) requires approval and a one-time Shopify App Store registration fee.",
+  "requirements": [
+    "A Shopify Partner/Dev Dashboard account",
+    "A redirect URI matching what you configure in the Dev Dashboard (or your app's shopify.app.toml)",
+    "The access scopes your integration needs",
+    "For public distribution: app listing assets (privacy policy, support contact, etc.) and the one-time App Store registration fee"
+  ],
+  "steps": [
+    {
+      "text": "Create or sign in to a Shopify Partner account and open the Dev Dashboard.",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Create an app and choose its distribution model: custom (one organization, no review) or public (many merchants, requires review + App Store registration).",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Get your app's client ID and client secret from the Dev Dashboard.",
+      "owner": "agent_found"
+    },
+    {
+      "text": "Configure your redirect URI in the Dev Dashboard (or shopify.app.toml) and set the access scopes you need.",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Implement the OAuth authorization code grant (or use Shopify CLI/app templates, which handle much of this for you).",
+      "owner": "agent_can_draft"
+    },
+    {
+      "text": "For public distribution only: submit for app review and register on the Shopify App Store (one-time fee).",
+      "owner": "you_must_do"
+    }
+  ],
+  "blockers": [
+    "Public distribution requires passing Shopify's app review and a one-time Shopify App Store registration fee — custom distribution needs neither.",
+    "You can't change an app's distribution method after you select it.",
+    "Private apps were deprecated in January 2022 and can no longer be created — use custom distribution instead.",
+    "Redirect URI must exactly match what's configured in the Dev Dashboard / shopify.app.toml, or the OAuth flow fails.",
+    "Shopify CLI and app templates now handle most of the token exchange for you — you rarely implement raw OAuth by hand for a new app."
+  ],
+  "sources": [
+    {
+      "url": "https://shopify.dev/docs/apps/launch/distribution",
+      "title": "About app distribution - Shopify Dev Docs",
+      "evidence": "manually_verified"
+    },
+    {
+      "url": "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens/authorization-code-grant",
+      "title": "Authenticate a standalone or API-only app - Shopify Dev Docs",
+      "evidence": "manually_verified"
+    }
+  ],
+  "confidence": "high",
+  "uncertainNotes": [
+    "Exact review timeline for public distribution wasn't stated on the pages checked; 7 days is a rough industry-typical estimate, not a Shopify-confirmed figure — confirm current timelines before committing to a launch date.",
+    "App Store registration fee amount wasn't checked here."
+  ],
+  "manuallyVerified": true,
+  "verificationNotes": [
+    "The automated pipeline's live run found no fetchable sources and fell back to general knowledge, which itself flagged (correctly, via self-check) that it was unsure whether the 'Partner Dashboard' / 'public vs custom' terminology it knew was still current.",
+    "Manually checked shopify.dev and found the terminology had indeed shifted: it's now the 'Dev Dashboard', and distribution is public vs. custom (not 'public vs private' app review as older material describes) — also found that public distribution requires a one-time App Store registration fee, which the auto-generated draft didn't mention at all, and that Shopify CLI/templates now handle most of the OAuth implementation."
+  ],
+  "generatedAt": "2026-10-28T09:05:00.000Z",
+  "isLive": false
+}

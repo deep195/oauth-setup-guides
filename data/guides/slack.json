@@ -1,0 +1,61 @@
+{
+  "appName": "Slack",
+  "website": "https://slack.com",
+  "slug": "slack",
+  "difficulty": "quick",
+  "setupTimeMinutes": null,
+  "approvalWaitDays": null,
+  "summary": "Creating a Slack OAuth app is straightforward and can be done in minutes via the Slack API dashboard. No approval is required to install the app to your own workspace, but publishing to the App Directory requires a separate review process.",
+  "requirements": [
+    "A Slack account and workspace",
+    "Redirect URI(s) using HTTPS",
+    "App name and description",
+    "Requested OAuth scopes (permissions)"
+  ],
+  "steps": [
+    {
+      "text": "Go to https://api.slack.com/apps and sign in with your Slack account",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Click 'Create New App' and choose 'From scratch'",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Enter app name and select the workspace to develop in",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Under 'OAuth & Permissions', add redirect URI(s) and select required scopes",
+      "owner": "agent_can_draft"
+    },
+    {
+      "text": "Save the Client ID and Client Secret shown under 'Basic Information'",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Install the app to your workspace using the 'Install App' button",
+      "owner": "you_must_do"
+    }
+  ],
+  "blockers": [
+    "Redirect URIs must use HTTPS (except localhost for development)",
+    "Scope changes after installation require re-authorization by users",
+    "App Directory submission has separate guidelines and review timeline",
+    "Rate limits apply to API calls (varies by method and tier)"
+  ],
+  "sources": [],
+  "confidence": "low",
+  "uncertainNotes": [
+    "No official sources were fetched; all information is from general knowledge",
+    "Exact setup time may vary based on familiarity with Slack's UI",
+    "App Directory review timeline and criteria are not confirmed",
+    "Specific rate limit numbers and tier details are not confirmed",
+    "Whether business verification is required for certain scopes is not confirmed",
+    "setupTimeMinutes (15) and approvalWaitDays (0) are not supported by any sources and have been set to null"
+  ],
+  "manuallyVerified": false,
+  "verificationNotes": [],
+  "generatedAt": "2026-10-28T08:43:01.410Z",
+  "isLive": false
+}

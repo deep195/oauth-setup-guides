@@ -1,0 +1,65 @@
+{
+  "appName": "QuickBooks (Intuit)",
+  "website": "https://quickbooks.intuit.com",
+  "slug": "quickbooks-intuit",
+  "difficulty": "moderate",
+  "setupTimeMinutes": null,
+  "approvalWaitDays": null,
+  "summary": "Register an OAuth app via the Intuit Developer Portal to access QuickBooks Online APIs. Development apps can use sandbox immediately; production apps require Intuit's app review.",
+  "requirements": [
+    "Intuit developer account",
+    "Redirect URI(s) using HTTPS",
+    "App name, description, and logo",
+    "Selection of required OAuth scopes (e.g., com.intuit.quickbooks.accounting)",
+    "Agreement to Intuit API Terms of Service"
+  ],
+  "steps": [
+    {
+      "text": "Create or sign in to an Intuit Developer account at developer.intuit.com",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Create a new app in the Developer Dashboard and choose 'QuickBooks Online' as the platform",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Configure OAuth 2.0 settings: add redirect URIs, select scopes, and set app type (public/private)",
+      "owner": "agent_can_draft"
+    },
+    {
+      "text": "Provide app metadata: name, description, logo, support URL, privacy policy URL",
+      "owner": "agent_can_draft"
+    },
+    {
+      "text": "Save the app to obtain Client ID and Client Secret",
+      "owner": "agent_found"
+    },
+    {
+      "text": "Test with sandbox credentials and a test company before submitting for production review",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Submit the app for Intuit's production review if you need to go live with real user data",
+      "owner": "you_must_do"
+    }
+  ],
+  "blockers": [
+    "Production apps must pass Intuit's app review process (criteria not detailed in available sources)",
+    "Redirect URIs must use HTTPS and match exactly what is registered",
+    "Rate limits and usage quotas apply; details not confirmed from sources",
+    "App review timeline is not specified in available sources"
+  ],
+  "sources": [],
+  "confidence": "low",
+  "uncertainNotes": [
+    "No official documentation pages were fetched; all information is based on general knowledge of Intuit's developer platform.",
+    "Exact setup time, approval wait time, and specific review criteria are not confirmed.",
+    "Requirements for business verification, if any, are not confirmed.",
+    "Details about sandbox vs. production environments, rate limits, and scope granularity are not confirmed from sources.",
+    "All steps, requirements, blockers, and summary claims are unsupported by sources because no source material was provided."
+  ],
+  "manuallyVerified": false,
+  "verificationNotes": [],
+  "generatedAt": "2026-10-28T08:55:38.717Z",
+  "isLive": false
+}

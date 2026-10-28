@@ -1,0 +1,36 @@
+{
+  "appName": "HubSpot OAuth App",
+  "website": "https://hubspot.com",
+  "slug": "hubspot-oauth-app",
+  "difficulty": "moderate",
+  "setupTimeMinutes": null,
+  "approvalWaitDays": null,
+  "summary": "HubSpot provides a developer platform for building integrations, but the provided sources do not contain specific details about OAuth app registration, requirements, or approval processes.",
+  "requirements": [],
+  "steps": [],
+  "blockers": [],
+  "sources": [
+    {
+      "url": "https://developers.hubspot.com",
+      "title": "HubSpot Developers | Create tomorrow's solutions today on HubSpot's Developer Platform.",
+      "evidence": "fetched_and_read"
+    },
+    {
+      "url": "https://developer.hubspot.com",
+      "title": "HubSpot Developers | Create tomorrow's solutions today on HubSpot's Developer Platform.",
+      "evidence": "fetched_and_read"
+    }
+  ],
+  "confidence": "low",
+  "uncertainNotes": [
+    "No information about OAuth app registration process found in the provided sources",
+    "No details about required redirect URIs, scopes, or app configuration",
+    "No information about approval workflow, review criteria, or timelines",
+    "No mention of rate limits, testing environments, or production requirements",
+    "Sources only contain marketing content for HubSpot Developer Platform (Academy, YouTube, Blog, Newsletter)"
+  ],
+  "manuallyVerified": false,
+  "verificationNotes": [],
+  "generatedAt": "2026-10-28T08:47:42.918Z",
+  "isLive": false
+}

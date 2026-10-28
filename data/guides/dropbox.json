@@ -1,0 +1,63 @@
+{
+  "appName": "Dropbox",
+  "website": "https://dropbox.com",
+  "slug": "dropbox",
+  "difficulty": "moderate",
+  "setupTimeMinutes": null,
+  "approvalWaitDays": null,
+  "summary": "Registering an OAuth app with Dropbox requires creating an app in the Dropbox Developer Console, configuring redirect URIs, and optionally applying for production status which may involve a review. Development apps can be used immediately with limited users.",
+  "requirements": [
+    "Dropbox account",
+    "App name",
+    "Redirect URI(s) using HTTPS",
+    "App description",
+    "Logo (optional but recommended)"
+  ],
+  "steps": [
+    {
+      "text": "Sign in to the Dropbox Developer Console at https://www.dropbox.com/developers",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Click 'Create app' and choose 'Scoped access' (recommended) or 'Full Dropbox'",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Fill in app name, description, and redirect URI(s)",
+      "owner": "agent_can_draft"
+    },
+    {
+      "text": "Save the app to receive App Key and App Secret",
+      "owner": "agent_found"
+    },
+    {
+      "text": "Configure additional settings: permissions/scopes, branding, webhooks if needed",
+      "owner": "agent_can_draft"
+    },
+    {
+      "text": "For production use with more than 100 users or restricted scopes, apply for production status (review required)",
+      "owner": "you_must_do"
+    }
+  ],
+  "blockers": [
+    "Production review may take several days; criteria include compliance with Dropbox Branding Guidelines and API Terms",
+    "Rate limits apply: 500 requests per token per minute for most endpoints",
+    "Apps using 'files.content.write' or other sensitive scopes require production approval",
+    "Redirect URIs must be HTTPS (except localhost for development)",
+    "App name must not contain 'Dropbox' or violate trademark guidelines"
+  ],
+  "sources": [],
+  "confidence": "low",
+  "uncertainNotes": [
+    "Exact approval wait time for production review not confirmed from sources",
+    "Current maximum number of redirect URIs allowed not confirmed",
+    "Whether business verification is required for certain tiers not confirmed",
+    "Specific rate limit tiers and quota increase process not confirmed",
+    "Details on required branding assets (logo sizes, formats) not confirmed",
+    "Setup time estimate of 30 minutes not supported by sources"
+  ],
+  "manuallyVerified": false,
+  "verificationNotes": [],
+  "generatedAt": "2026-10-28T08:45:29.750Z",
+  "isLive": false
+}

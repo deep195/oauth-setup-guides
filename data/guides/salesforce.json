@@ -1,0 +1,70 @@
+{
+  "appName": "Salesforce",
+  "website": "https://salesforce.com",
+  "slug": "salesforce",
+  "difficulty": "moderate",
+  "setupTimeMinutes": 20,
+  "approvalWaitDays": 0,
+  "summary": "Register an OAuth-capable app in your Salesforce org's Setup. As of Spring '26, Salesforce restricts creating new Connected Apps and now directs developers to External Client Apps instead — a change recent enough that general LLM knowledge misses it. No external review is required for use within your own org.",
+  "requirements": [
+    "A Salesforce org with admin access to Setup (Developer Edition orgs are free)",
+    "A redirect URI (callback URL) for your app",
+    "The OAuth scopes your integration needs"
+  ],
+  "steps": [
+    {
+      "text": "Log in to your Salesforce org and go to Setup.",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "In the Quick Find box, enter \"App Manager\", then open App Manager.",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Click \"New External Client App\" (the current path — \"New Connected App\" is restricted as of Spring '26).",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Fill in basic info: app name, API name, contact email.",
+      "owner": "agent_can_draft"
+    },
+    {
+      "text": "Enable OAuth settings, set the callback URL, and select the OAuth scopes your app needs.",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Save. Consumer Key and Consumer Secret are generated immediately — no external review for use within your own org.",
+      "owner": "agent_found"
+    }
+  ],
+  "blockers": [
+    "As of Spring '26, new Connected Apps can no longer be created — use External Client Apps instead, or contact Salesforce Support if you specifically need a Connected App.",
+    "Distributing your app to other orgs (e.g. via AppExchange) is a separate, additional review process beyond the basic setup covered here.",
+    "Redirect URI must exactly match what's configured, or the OAuth flow fails.",
+    "Rate limits and API request allocations apply per org/edition."
+  ],
+  "sources": [
+    {
+      "url": "https://help.salesforce.com/s/articleView?id=xcloud.connected_app_create.htm&type=5",
+      "title": "Create a Connected App | Salesforce Help",
+      "evidence": "manually_verified"
+    },
+    {
+      "url": "https://developer.salesforce.com/docs/platform/sfdx-dev-tools/guide/sfdx-dev-auth-eca.html",
+      "title": "Create an External Client App in Your Org | Salesforce Developers",
+      "evidence": "manually_verified"
+    }
+  ],
+  "confidence": "medium",
+  "uncertainNotes": [
+    "Exact OAuth scope names and recommended defaults were not independently re-verified here — confirm in App Manager for your edition.",
+    "AppExchange/public distribution review timelines were not researched for this guide; only basic in-org setup is covered."
+  ],
+  "manuallyVerified": true,
+  "verificationNotes": [
+    "The automated pipeline's live run fetched only Salesforce developer-portal landing pages, correctly judged they didn't support any specific claims, and produced an empty guide rather than fabricate one — honest, but not useful on its own.",
+    "Manually browsed help.salesforce.com and developer.salesforce.com to fill the gap, and found something the automated pass (running on free models) would not have known: Salesforce restricted creation of new Connected Apps as of Spring '26 and now directs developers to External Client Apps — recent enough that it postdates most models' training data. This guide reflects the current (verified) path."
+  ],
+  "generatedAt": "2026-10-28T08:50:48.276Z",
+  "isLive": false
+}

@@ -1,0 +1,65 @@
+{
+  "appName": "GitHub",
+  "website": "https://github.com",
+  "slug": "github",
+  "difficulty": "quick",
+  "setupTimeMinutes": 10,
+  "approvalWaitDays": 0,
+  "summary": "Register a GitHub OAuth app under your personal account or any organization you administer. The app is created immediately with no provider review — you get a Client ID and Secret right away.",
+  "requirements": [
+    "A GitHub account (personal or an organization you have admin access to)",
+    "An application name using only public information (avoid internal URLs or sensitive details)",
+    "A homepage URL for your app",
+    "An authorization callback URL (you can register up to 10)"
+  ],
+  "steps": [
+    {
+      "text": "In the upper-right corner of GitHub, click your profile picture, then Settings.",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "In the left sidebar, click Developer settings, then OAuth Apps.",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Click \"New OAuth App\" (shows as \"Register a new application\" if you've never created one).",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Fill in Application name, Homepage URL, an optional description, and the Authorization callback URL.",
+      "owner": "agent_can_draft"
+    },
+    {
+      "text": "Optionally enable Device Flow if your app needs it, and review the \"Expire user access tokens\" setting (on by default).",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Click \"Register application\" to get your Client ID and Client Secret.",
+      "owner": "you_must_do"
+    }
+  ],
+  "blockers": [
+    "A user or organization can own up to 100 OAuth apps.",
+    "Only use public information when filling out the app — GitHub explicitly warns against sensitive data like internal URLs.",
+    "\"Expire user access tokens\" is on by default; uncheck it only if your app isn't yet updated to handle short-lived tokens.",
+    "Up to 10 callback URLs are allowed per app; each must match exactly during the OAuth flow.",
+    "For most new integrations GitHub now recommends GitHub Apps over OAuth Apps (finer-grained permissions, short-lived tokens) — worth evaluating before committing to the OAuth App path."
+  ],
+  "sources": [
+    {
+      "url": "https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app",
+      "title": "Creating an OAuth app - GitHub Docs",
+      "evidence": "manually_verified"
+    }
+  ],
+  "confidence": "high",
+  "uncertainNotes": [
+    "Exact wording on whether callback URLs must be HTTPS in production wasn't stated on this specific page — use HTTPS for any production redirect URI as standard OAuth practice."
+  ],
+  "manuallyVerified": true,
+  "verificationNotes": [
+    "The automated pipeline's own fetch attempts for GitHub failed on both runs tried here (search blocked, then a model timeout), so it fell back to general knowledge at low/no confidence. Read docs.github.com directly and confirmed the steps, the 100-app and 10-callback-URL limits, and the public-information warning verbatim; added the Device Flow and token-expiry nuances the auto-generated draft had omitted."
+  ],
+  "generatedAt": "2026-10-28T09:05:00.000Z",
+  "isLive": false
+}

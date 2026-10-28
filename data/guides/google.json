@@ -1,0 +1,72 @@
+{
+  "appName": "Google",
+  "website": "https://google.com",
+  "slug": "google",
+  "difficulty": "enterprise",
+  "setupTimeMinutes": 30,
+  "approvalWaitDays": 28,
+  "summary": "Creating OAuth credentials in Google Cloud Console takes minutes and works immediately for your own testing. But if your app requests sensitive or restricted scopes (e.g. Gmail, Drive, Calendar data) and will be used by people outside your organization, Google requires an app verification review that commonly takes several weeks — Google's own docs say to submit as early as possible.",
+  "requirements": [
+    "A Google Cloud project",
+    "An OAuth consent screen configured with your app's name, logo, and scopes",
+    "An OAuth client ID for the right application type (Web, Desktop, Android, iOS, Chrome Extension, TV/limited-input, or a service account for server-to-server)",
+    "For verification: a privacy policy URL, a demo video showing scope usage, and (for restricted scopes) a third-party security assessment"
+  ],
+  "steps": [
+    {
+      "text": "Create or select a project in Google Cloud Console.",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Configure the OAuth consent screen: app name, logo, support email, and the scopes you need.",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Create an OAuth client ID of the right type for your app (Web, Desktop, mobile, etc.) — this is immediate and unblocked.",
+      "owner": "agent_found"
+    },
+    {
+      "text": "If you only need non-sensitive scopes, you can publish and use the app without Google's review (optionally complete lightweight 'brand verification' to show your app name/logo on the consent screen).",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "If you need sensitive or restricted scopes for external users, submit for OAuth app verification: privacy policy, scope justification, demo video, and (for restricted scopes) a security assessment.",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Draft the scope-justification text and demo script while waiting — this is the part most likely to cause back-and-forth with Google's review team.",
+      "owner": "agent_can_draft"
+    }
+  ],
+  "blockers": [
+    "Verification is only mandatory for sensitive/restricted scopes; non-sensitive-scope apps can skip it entirely.",
+    "Google's own documentation states verification 'can take several weeks' and recommends submitting as early as possible; developer reports commonly cite 2–8 weeks, longer for restricted scopes or incomplete submissions.",
+    "Restricted scopes additionally require an annual third-party security assessment to re-verify.",
+    "Apps that change configuration after verification (e.g. adding scopes) may need to re-verify.",
+    "The review is often iterative — expect clarification requests, not a single pass/fail."
+  ],
+  "sources": [
+    {
+      "url": "https://developers.google.com/identity/protocols/oauth2",
+      "title": "Using OAuth 2.0 to Access Google APIs - Google for Developers",
+      "evidence": "manually_verified"
+    },
+    {
+      "url": "https://support.google.com/cloud/answer/13463073",
+      "title": "OAuth App Verification Help Center - Google Cloud Platform Console Help",
+      "evidence": "manually_verified"
+    }
+  ],
+  "confidence": "medium",
+  "uncertainNotes": [
+    "The 28-day approval estimate is a representative midpoint of commonly reported ranges (2–8+ weeks), not a figure Google publishes as a guarantee — actual timelines vary by scope sensitivity and submission completeness.",
+    "Exact current requirements for the security assessment (which third-party assessors, cost) weren't independently re-verified here."
+  ],
+  "manuallyVerified": true,
+  "verificationNotes": [
+    "The automated pipeline's live run fetched only Gemini/AI marketing landing pages for google.com domains and correctly judged them irrelevant, producing an empty guide rather than guessing.",
+    "Manually confirmed via developers.google.com and support.google.com that credential creation itself is instant, but verification for sensitive/restricted scopes is a genuinely multi-week process — this is the clearest example in this library of 'setup time' and 'approval wait' being very different numbers, which is exactly the distinction this product is built to surface."
+  ],
+  "generatedAt": "2026-10-28T09:05:00.000Z",
+  "isLive": false
+}

@@ -1,0 +1,72 @@
+{
+  "appName": "Discord OAuth Application",
+  "website": "https://discord.com",
+  "slug": "discord-oauth-application",
+  "difficulty": "quick",
+  "setupTimeMinutes": null,
+  "approvalWaitDays": null,
+  "summary": "Discord OAuth app registration is done through the Developer Portal and is immediately usable for basic scopes. No approval wait for standard apps; verification is only required for privileged intents or apps in 100+ servers.",
+  "requirements": [
+    "Discord user account",
+    "Valid HTTPS redirect URI(s)",
+    "Application name and description",
+    "Icon image (optional but recommended)"
+  ],
+  "steps": [
+    {
+      "text": "Go to https://discord.com/developers/applications and log in with your Discord account",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Click 'New Application', enter an app name, and create it",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Navigate to the 'OAuth2' tab in the left sidebar",
+      "owner": "agent_found"
+    },
+    {
+      "text": "Add your redirect URI(s) under 'Redirects' (must use HTTPS, except localhost)",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Select required OAuth2 scopes (e.g., identify, email, guilds)",
+      "owner": "agent_can_draft"
+    },
+    {
+      "text": "Copy the Client ID and Client Secret for use in your code",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Save changes",
+      "owner": "you_must_do"
+    }
+  ],
+  "blockers": [
+    "Redirect URIs must use HTTPS (localhost with HTTP is allowed for development)",
+    "Apps requiring privileged intents (presence, message content, guild members) need verification after reaching 100 servers",
+    "Rate limits apply to API endpoints; OAuth2 token endpoint has its own limits",
+    "Client Secret must be kept confidential; can be regenerated if compromised"
+  ],
+  "sources": [],
+  "confidence": "low",
+  "uncertainNotes": [
+    "Exact rate limit numbers not confirmed from official docs",
+    "Verification process timeline for privileged intents not specified",
+    "Whether business verification is ever required for standard apps",
+    "Current UI layout of Developer Portal may differ from description",
+    "setupTimeMinutes: 15 not supported by any source (set to null)",
+    "approvalWaitDays: 0 not supported by any source (set to null)",
+    "Claim 'immediately usable for basic scopes' not verified",
+    "Claim 'No approval wait for standard apps' not verified",
+    "Claim 'verification is only required for privileged intents or apps in 100+ servers' not verified (specific number 100)",
+    "Redirect URI HTTPS requirement with localhost exception not verified",
+    "Privileged intents list (presence, message content, guild members) and 100-server threshold not verified",
+    "Rate limits claim not verified",
+    "Client Secret confidentiality and regeneration claim not verified"
+  ],
+  "manuallyVerified": false,
+  "verificationNotes": [],
+  "generatedAt": "2026-10-28T08:40:54.824Z",
+  "isLive": false
+}

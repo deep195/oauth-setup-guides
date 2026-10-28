@@ -1,0 +1,45 @@
+{
+  "appName": "LinkedIn OAuth App",
+  "website": "https://linkedin.com",
+  "slug": "linkedin-oauth-app",
+  "difficulty": "moderate",
+  "setupTimeMinutes": null,
+  "approvalWaitDays": null,
+  "summary": "LinkedIn provides developer products to enhance sign-in experiences and content sharing via APIs, but the sources do not detail the OAuth app registration process, requirements, or approval timeline.",
+  "requirements": [],
+  "steps": [
+    {
+      "text": "Visit the LinkedIn Developer Portal at developers.linkedin.com to begin app registration.",
+      "owner": "you_must_do"
+    }
+  ],
+  "blockers": [],
+  "sources": [
+    {
+      "url": "https://developers.linkedin.com",
+      "title": "LinkedIn Developer Solutions",
+      "evidence": "fetched_and_read"
+    },
+    {
+      "url": "https://developer.linkedin.com",
+      "title": "LinkedIn Developer Solutions",
+      "evidence": "fetched_and_read"
+    },
+    {
+      "url": "https://linkedin.com/developers",
+      "title": "LinkedIn Developer Solutions",
+      "evidence": "fetched_and_read"
+    }
+  ],
+  "confidence": "low",
+  "uncertainNotes": [
+    "No specific OAuth app registration steps, required fields (redirect URI, privacy policy URL, etc.), or approval process are described in the provided sources.",
+    "The sources only list high-level developer products and news, not the practical registration workflow.",
+    "Unclear if LinkedIn requires business verification, app review, or specific scopes for OAuth apps.",
+    "No information on rate limits, common rejection reasons, or review criteria."
+  ],
+  "manuallyVerified": false,
+  "verificationNotes": [],
+  "generatedAt": "2026-10-28T08:53:09.581Z",
+  "isLive": false
+}

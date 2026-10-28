@@ -1,0 +1,63 @@
+{
+  "appName": "X (formerly Twitter)",
+  "website": "https://x.com",
+  "slug": "x-formerly-twitter",
+  "difficulty": "moderate",
+  "setupTimeMinutes": null,
+  "approvalWaitDays": null,
+  "summary": "Registering an OAuth app on X requires a developer account, which may need approval. Once approved, you create a project and app in the developer portal, providing details like redirect URIs and privacy policy.",
+  "requirements": [
+    "X developer account (may require application and review)",
+    "Redirect URI(s) using HTTPS",
+    "App name and description",
+    "Website URL",
+    "Terms of Service URL",
+    "Privacy Policy URL",
+    "Organization details (for Elevated access)"
+  ],
+  "steps": [
+    {
+      "text": "Apply for an X developer account at developer.x.com",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Wait for developer account approval (if required)",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Create a new project in the X Developer Portal",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Create an app within the project, providing app name, description, website, redirect URIs, terms of service, privacy policy",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Configure OAuth 2.0 settings (enable OAuth 2.0, set callback URIs)",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Save and note the Client ID and Client Secret",
+      "owner": "you_must_do"
+    }
+  ],
+  "blockers": [
+    "Developer account approval can take time and may be rejected if use case doesn't comply with policies",
+    "Essential access has strict rate limits; Elevated access requires additional review",
+    "Redirect URIs must use HTTPS and match exactly",
+    "Apps must comply with X's Developer Agreement and Policy",
+    "Changes to app settings may require re-review"
+  ],
+  "sources": [],
+  "confidence": "low",
+  "uncertainNotes": [
+    "No official documentation sources were provided; all information is based on general knowledge of X's OAuth setup as of 2024.",
+    "Exact approval timelines, current access tiers, and specific requirements may have changed.",
+    "The process for obtaining Elevated or Academic access is not detailed.",
+    "Rate limits and specific OAuth 2.0 parameters (PKCE, scopes) are not confirmed."
+  ],
+  "manuallyVerified": false,
+  "verificationNotes": [],
+  "generatedAt": "2026-10-28T08:50:44.714Z",
+  "isLive": false
+}

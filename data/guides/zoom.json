@@ -1,0 +1,73 @@
+{
+  "appName": "Zoom OAuth App",
+  "website": "https://zoom.us",
+  "slug": "zoom-oauth-app",
+  "difficulty": "moderate",
+  "setupTimeMinutes": null,
+  "approvalWaitDays": null,
+  "summary": "Registering a custom OAuth app with Zoom requires creating a Zoom Marketplace developer account, configuring app details (redirect URIs, scopes, privacy policy), and potentially undergoing a review process before the app can be used by others. The process is straightforward but may involve approval delays depending on requested scopes.",
+  "requirements": [
+    "Zoom account (can be free)",
+    "Valid redirect URI(s) using HTTPS",
+    "Privacy policy URL",
+    "Terms of service URL",
+    "App name and description",
+    "Selected OAuth scopes (e.g., user:read, meeting:write)"
+  ],
+  "steps": [
+    {
+      "text": "Create or sign in to a Zoom account at https://zoom.us/signup",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Go to Zoom Marketplace (https://marketplace.zoom.us) and navigate to 'Develop' > 'Build App'",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Choose 'OAuth' as the app type",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Fill in basic app information: name, short description, long description, company name, developer contact info",
+      "owner": "agent_can_draft"
+    },
+    {
+      "text": "Add one or more redirect URIs (must use HTTPS)",
+      "owner": "agent_found"
+    },
+    {
+      "text": "Provide privacy policy URL and terms of service URL",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Select required OAuth scopes (e.g., user:read, meeting:read, recording:read)",
+      "owner": "agent_can_draft"
+    },
+    {
+      "text": "Submit app for review if intending to publish to Marketplace or use with accounts outside your own",
+      "owner": "you_must_do"
+    }
+  ],
+  "blockers": [
+    "Apps requesting sensitive scopes (e.g., recording, phone, admin) face stricter review",
+    "Privacy policy and terms of service must be publicly accessible URLs",
+    "Redirect URIs must exactly match (including path) and use HTTPS",
+    "Unpublished apps can only be authorized by users on the same Zoom account (unless using 'Account-level app' with admin consent)",
+    "Review times vary; no guaranteed SLA published"
+  ],
+  "sources": [],
+  "confidence": "low",
+  "uncertainNotes": [
+    "No official documentation pages were fetched; all information is based on general knowledge of Zoom's developer platform as of 2024",
+    "Exact approval wait times are not documented publicly and vary by scope and app type",
+    "Whether a specific app requires review depends on scopes and distribution model (account-level vs. user-level)",
+    "Zoom has deprecated JWT apps and is migrating to Server-to-Server OAuth; this may affect new registrations",
+    "Rate limits and quota details not confirmed without current docs",
+    "setupTimeMinutes of 30 minutes is not supported by any source; actual time varies",
+    "approvalWaitDays is null as no source provides specific wait time data"
+  ],
+  "manuallyVerified": false,
+  "verificationNotes": [],
+  "generatedAt": "2026-10-28T08:46:13.300Z",
+  "isLive": false
+}

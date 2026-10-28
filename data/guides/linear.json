@@ -1,0 +1,56 @@
+{
+  "appName": "Linear",
+  "website": "https://linear.app",
+  "slug": "linear",
+  "difficulty": "quick",
+  "setupTimeMinutes": null,
+  "approvalWaitDays": null,
+  "summary": "Linear offers self-service OAuth app registration through its developer settings. No approval process is required; developers can create credentials immediately after filling out a short form.",
+  "requirements": [
+    "A Linear account (personal or workspace admin)",
+    "Application name",
+    "One or more HTTPS redirect URIs (localhost allowed for development)",
+    "Optional: application description and logo"
+  ],
+  "steps": [
+    {
+      "text": "Sign in to Linear and open Settings → API → OAuth applications",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Click 'Create new OAuth application'",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Fill in the application name, redirect URI(s), and optional description/logo",
+      "owner": "agent_can_draft"
+    },
+    {
+      "text": "Submit the form to receive your Client ID and Client Secret",
+      "owner": "you_must_do"
+    },
+    {
+      "text": "Store the Client Secret securely — it is shown only once",
+      "owner": "you_must_do"
+    }
+  ],
+  "blockers": [
+    "Redirect URIs must use HTTPS (except http://localhost for local development)",
+    "Client Secret is displayed only once at creation; if lost, a new secret must be generated",
+    "Scopes are requested at authorization time, not configured during app registration"
+  ],
+  "sources": [],
+  "confidence": "low",
+  "uncertainNotes": [
+    "No official documentation pages were fetched; all details are from general knowledge of Linear's OAuth flow",
+    "Exact UI location (Settings → API → OAuth applications) not verified from current Linear interface",
+    "Whether workspace admin rights are required for all workspaces or only some is unconfirmed",
+    "Rate limits, scope list, and PKCE support details not confirmed from sources",
+    "No information on whether Linear reviews or restricts certain types of applications",
+    "setupTimeMinutes (10) and approvalWaitDays (0) are not supported by any sources; set to null"
+  ],
+  "manuallyVerified": false,
+  "verificationNotes": [],
+  "generatedAt": "2026-10-28T08:47:36.231Z",
+  "isLive": false
+}
