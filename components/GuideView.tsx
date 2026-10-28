@@ -42,6 +42,16 @@ const EVIDENCE: Record<EvidenceLevel, string> = {
 
 const CONFIDENCE_PCT: Record<Guide["confidence"], number> = { low: 33, medium: 66, high: 100 };
 
+// Intl.DateTimeFormat with an explicit locale + timeZone so the server render (wherever it runs)
+// and the client hydration always produce identical text — `toLocaleString()` without these pins
+// to the runtime's own locale/timezone, which differs between server and browser and throws a
+// React hydration-mismatch error (#418), observed directly on this page.
+const DATE_FMT = new Intl.DateTimeFormat("en-US", {
+  dateStyle: "medium",
+  timeStyle: "short",
+  timeZone: "UTC",
+});
+
 function fmtTime(mins: number | null): string {
   if (mins == null) return "Not specified by sources";
   if (mins < 60) return `${mins} min`;
@@ -248,7 +258,7 @@ export default function GuideView({ guide, shareUrl }: { guide: Guide; shareUrl?
           ))}
           {guide.sources.length === 0 && <li className="text-sm text-zinc-400">No sources were successfully fetched.</li>}
         </ul>
-        <p className="text-xs text-zinc-400 mt-4">Generated {new Date(guide.generatedAt).toLocaleString()}</p>
+        <p className="text-xs text-zinc-400 mt-4">Generated {DATE_FMT.format(new Date(guide.generatedAt))} UTC</p>
       </section>
     </article>
   );
